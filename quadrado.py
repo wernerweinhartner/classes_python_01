@@ -36,7 +36,7 @@ quad.lado = input_type("Informe o lado do quadrado: ", 'float>0')
 print("A área do quadrado é %s." % (quad.area_formatada()))
 
 
-
+#Instanciar === inicializar um objeto através de uma classe
 
     
 
