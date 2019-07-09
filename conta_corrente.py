@@ -31,6 +31,9 @@ class Conta:
         return self.num_conta
 
     def get_saldo(self):
+        """
+        Alterar para somente retornar o valor do saldo.
+        """
         a = float(input('Qual o valor que você deseja depositar?: '))
         b = float(input('Qual o valor que você deseja sacar?: '))
         self.saldo = float(self.saldo)
@@ -39,6 +42,18 @@ class Conta:
             return ('Atenção! Seu saldo está negativo em  R$ %.2f!' % (self.saldo))
         else:
             return ('Seu saldo é: R$ %.2f' % (self.saldo))
+
+    def sacar(self, valor):
+        """
+        Deve receber um valor a ser sacado, subtrair do saldo e retornar o mesmo valor
+        sacado para o usuário.
+        """
+    
+    def depositar(self, valor):
+        """
+        Deve receber um valor a ser depositado e adiciona-lo ao saldo.
+        Nao precisa retornar nada.
+        """
 
 
 c = Conta()
