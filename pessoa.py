@@ -127,8 +127,10 @@ class Pessoa:
         self.idade = float(self.idade)
         self.peso = float(self.peso)
         r = self.peso
-        if self.idade > 30:
+        if self.idade >= 30:
             self.peso += 1
+        elif self.idade < 30:
+            self.peso += 0.5
         return ('O seu peso atual é %.2f kg. Daqui a 1 ano ele será: %.2f kg' % (r, self.peso))
         
     def crescer2(self):
