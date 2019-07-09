@@ -38,7 +38,7 @@ class Funcionario:
     # def set_aumento(self, aumento):
     #     self.aumento = aumento
 
-    def aumento(self):
+    def aumentar(self):
         a = input('Você gostaria de dar um aumento ao funcionário %s (s ou n)? ' % (self.nome))
         if a == 's':
             b = input('Qual a porcentagem de aumento de salário? ')
@@ -58,4 +58,6 @@ f.set_nome(input('Informe o nome do funcionário: '))
 f.set_salario(input('Informe o salário desse funcionário: '))
 print(f.get_nome())
 print(f.get_salario())
-print(f.aumento())
+print(f.aumentar())
+
+#Fazer menu

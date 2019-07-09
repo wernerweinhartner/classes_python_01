@@ -91,3 +91,4 @@ else:
     print(b.abastecer_valor())
 #print(b.get_quantidade())
 print(b.fuel_left())
+#Fazer menu
