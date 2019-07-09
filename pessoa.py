@@ -145,27 +145,39 @@ class Pessoa:
             return ('Quando completar 21 anos, sua altura será %.2f m' % (self.altura))
         else:
             return ('Sua fase de crescimento já passou')
-    #Arrumar o detalhe da idade referente ao aumento de peso
-    #O aumento será efetivo a partir dos 30 anos
-    #Ex: a pessoa tem 20 anos e quer saber o seu peso daqui a 40 anos
-    #Entao o aumento efetivo sera 30 - 20 =10 ===== 40 - 10 = 30 
-    #Logo o aumento vai corresponder a 30 anos (30kg)
+    
     def engordar2(self):
+        #Arrumar o detalhe da idade referente ao aumento de peso
+        #O aumento será efetivo a partir dos 30 anos
+        #Ex: a pessoa tem 20 anos e quer saber o seu peso daqui a 40 anos
+        #Entao o aumento efetivo sera 30 - 20 =10 ===== 40 - 10 = 30 
+        #Logo o aumento vai corresponder a 30 anos (30kg)
         self.idade = float(self.idade)
         self.peso = float(self.peso)
         self.previsao_peso = int(self.previsao_peso)
-        if self.idade > 30:
+        if self.idade >= 30:
             b = 0
             while b <= self.previsao_peso:
                 b += 1
                 self.peso += 1
             return ('Em %d anos, seu peso será %.2f kg' % (self.previsao_peso, (self.peso -2)))
         elif self.idade < 30:
+            # z = 30 - self.idade
+            # w = self.previsao_peso - z
+            # y = 0
+            # while y <= w:
+            #     y += 1
+            #     self.peso += 1
+            # return ('Em %d anos, seu peso será %.2f kg' % (self.previsao_peso, self.peso))
             z = 30 - self.idade
-            w = self.previsao_peso - z
-            y = 0
-            while y <= w:
-                y += 1
+            w = 0
+            while w <= z:
+                w += 1
+                self.peso += 0.5
+            y = self.previsao_peso - z
+            d = 0
+            while d <= y:
+                d += 1
                 self.peso += 1
             return ('Em %d anos, seu peso será %.2f kg' % (self.previsao_peso, self.peso))
 
