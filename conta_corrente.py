@@ -14,6 +14,18 @@ class Conta:
     nome = ''
     saldo = 0
 
+    def __init__(self, valor = 0):
+        """
+        Construtor da Classe, executado sempre que a classe Conta é instanciada,
+        ex: 
+        Instanciar a classe Conta sem passar parametros:
+            conta = Conta()
+        Instanciar a classe Conta passando como parametro o valor do saldo de 100 reais:
+            conta = Conta(100)
+        """
+        if valor:
+            self.saldo = valor
+
     #Metodos:
     def set_num_conta(self, conta):
         self.num_conta = conta
@@ -72,14 +84,45 @@ class Conta:
         return self.saldo
 
 
-c = Conta()
-c.set_nome(input('Informe seu nome: '))
-c.set_num_conta(input('Insira o número da sua conta corrente: '))
-c.set_saldo(input('Informe seu saldo: '))
-dep = float(input('Quanto você gostaria de depositar?: '))
-c.depositar(dep)
-saque = float(input('Quanto você gostaria de sacar?: '))
-c.sacar(saque)
-print('Nome do correntista: ' + c.get_nome())
-print('Número de conta corrente: ' + c.get_num_conta())
-print(c.get_saldo())
+# c = Conta()
+# c.set_nome(input('Informe seu nome: '))
+# c.set_num_conta(input('Insira o número da sua conta corrente: '))
+# c.set_saldo(input('Informe seu saldo: '))
+# dep = float(input('Quanto você gostaria de depositar?: '))
+# c.depositar(dep)
+# saque = float(input('Quanto você gostaria de sacar?: '))
+# c.sacar(saque)
+# print('Nome do correntista: ' + c.get_nome())
+# print('Número de conta corrente: ' + c.get_num_conta())
+# print(c.get_saldo())
+
+
+# Exemplo de instancia da classe Conta passando um parametro para o construtor.
+conta = Conta(100)
+print("Saldo = %0.2f." % conta.get_saldo())
+
+op = ''
+
+while op != '0':
+    print(" ")
+    print("-----------------")
+    print("Opções da Conta:")
+    print(" 1 - Depositar.")
+    print(" 2 - Sacar.")
+    print(" 3 - Ver Saldo.")
+    print(" 0 - Sair.")
+    op = input("Escolha uma das opções:")
+
+    if op == '1':
+        valor = float(input("Valor a ser depositado: "))
+        conta.depositar(valor)
+    elif op == '2':
+        valor = float(input("Valor a ser sacado: "))
+        conta.sacar(valor)
+    elif op == '3':
+        print("Saldo atual = %0.2f." % conta.get_saldo())
+    elif op == '0':
+        print("Tchau.")
+    else:
+        print("Opção inválida.")
+    
