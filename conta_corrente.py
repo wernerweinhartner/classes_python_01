@@ -126,3 +126,18 @@ while op != '0':
     else:
         print("Opção inválida.")
     
+
+
+# Exmplos de manipulacao de data:
+from datetime import datetime
+
+# Pegar a data atual na variavel date:
+date = datetime.now() # A partir daqui date é um objeto do tipo datetime (uma instancia de datetime).
+# formata o objeto date para string no padrao brasileiro:
+data_atual = date.strftime("%d/%m/%Y %H:%M:%S")
+print("Data e hora atuais: %s." % (data_atual))
+
+# Para converter uma data string em objeto datetime:
+data = datetime.strptime("01/02/2001 10:30:00", "%d/%m/%Y %H:%M:%S")
+# Convertendo somente a data:
+data = datetime.strptime("01/02/2001", "%d/%m/%Y")
